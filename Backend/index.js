@@ -1,0 +1,10 @@
+const express = require("express");
+require("dotenv/config");
+const taskrouter = require("../Backend/router/task.router");
+const app = express();
+const cors = require("cors");
+app.use(cors());
+app.use(express.json());
+const port = 8000;
+app.use("/Tasks", taskrouter);
+app.listen(port, () => console.log("Server Started"));
